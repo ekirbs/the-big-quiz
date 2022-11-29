@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./Assets/css/style.css" />
+
+  <title>the BIG quiz</title>
+</head>
+
+<body>
+  <!-- Header with current score and timer -->
+  <header>
+    <a class="float-left" href="highScores.html">View High Scores</a> 
+    <h1>
+      THE <b>BIG</b> QUIZ
+    </h1>
+
+    <h2><span id="counter">0</span> Your Score</h2>
+
+  </header>
+
+  <h1>Coding Quiz Challenge</h1>
+  <p>Try to answer the following code-related questions within the limit.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!</p>
+
+  <section id="hero">
+    <p id="score">
+    </p>
+    <br>
+    <p id="countdown">
+    </p>
+  </section>
+
+  <!-- Container for quiz Q&A, plus start button -->
+  <div id="container">
+    <h3 id="question-title"></h3>
+    <ul id="question-body">
+    </ul>
+    <h6 id="result">
+    </h6>
+    <button id="start-button">
+      Start the Quiz
+    </button>
+  </div>
+  <script src="./assets/javascript/script.js"></script>
+</body>
+
+</html>
+
+<!-- add sound effects on right/wrong -->
