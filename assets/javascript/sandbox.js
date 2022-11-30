@@ -47,7 +47,6 @@ function checkForAnswer(event) {
   }
 }
 
-//view Highscores anchor tag at top of html
 //view highscores is a separate webpage with a back button
 //use table for highscores (table page saved in bookmarks) dynamically stored
 
