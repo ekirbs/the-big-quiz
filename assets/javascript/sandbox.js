@@ -144,3 +144,172 @@ function checkForAnswer(event) {
 //       body.appendChild(row);
 //   }
 // }
+
+
+
+// function countdown() {
+
+//     var timeInterval = setInterval(function () {
+//       timeCount--;
+//         timer.textContent = timeCount + " seconds remaining";
+//         scoreDisplay.innerHTML = "Your score: " + scoreCount;
+
+//         if (timeCount <= 0) {
+
+//             clearInterval(timeInterval);
+
+//             displayMessage1();
+//             loggedScore = localStorage.setItem("scoreCount", scoreCount);
+//             console.log(loggedScore);
+
+//             // timer.textContent = "";
+//             // scoreDisplay.textContent = "";
+//             return countdown();
+
+//         };
+//     }, 1000);
+// };
+
+
+
+// we want to use "delegation" when dealing with eventlisteners and dynamic elemnts on the dom.
+//how delegation works is we attach the event listener directly to the dom and then filter thru it to make sure its acutally clicking on the desired target.
+
+// startButton.addEventListener('click', function () {
+//     console.log("Quiz started");
+//     scoreDisplay.innerHTML = "Your score: " + scoreCount;
+//     renderCurrentQuestion();
+//     countdown();
+// });
+
+// document.addEventListener("click", checkForAnswer);
+
+// CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
+// function checkForAnswer(event) {
+//     if (event.target.matches("li")) {
+//         console.log(event.target);
+//         if (event.target.textContent === qaBank[currentQuestion].correct) {
+//             console.log("Right answer");
+//             resultText.innerHTML = "Thats right!"
+//             scoreCount = timeCount;
+//             scoreDisplay.innerHTML = "Your score: " + scoreCount;
+//             console.log(scoreCount);
+//         } else {
+//             console.log("Wrong answer");
+//             resultText.innerHTML = "That's not correct!"
+//             timeCount -= 15;
+//             scoreCount = timeCount;
+//             scoreDisplay.innerHTML = "Your score: " + scoreCount;
+//             console.log(scoreCount);
+//         };
+
+//         currentQuestion++;
+//         console.log(currentQuestion);
+//         renderCurrentQuestion();
+//     };
+
+//     // if (currentQuestion >= 5) {
+//     //   isWin = true;
+//     // };
+// };
+
+// function log_results(num_rolls, rolls, table) {
+//   let head = table.getElementsByTagName("thead")[0];
+//   let body = table.getElementsByTagName("tbody")[0];
+
+//   let caption = document.createElement("caption");
+//   caption.innerText = `We rolled the dice ${num_rolls} times...`;
+//   caption.style = "caption-side: top;";
+
+//   table.insertBefore(caption, head);
+
+//   for(let i = 0; i < rolls.length; i++) {
+//       let num = i+2;
+//       let count = rolls[i];
+//       let pct = Math.round(count / num_rolls * 100);
+
+//       let row = document.createElement("tr");
+//       row.innerHTML = `<td>${num}</td><td>${count}</td><td>${pct}%</td>`;
+//       body.appendChild(row);
+//   }
+// }
+
+
+// var counter = document.querySelector("#counter");
+// var guessedRight = document.querySelector("#guessedRight");
+// var guessedWrong = document.querySelector("#guessedWrong");
+
+// var count = localStorage.getItem("count");
+
+// counter.textContent = count;
+
+// addButton.addEventListener("click", function() {
+//   if (guessedRight) {
+//     count++;
+//     counter.textContent = count;
+//     localStorage.setItem("count", count);
+//   }
+// });
+
+
+// function getLocalStorage ( {
+  // return JSON.parse(localStorage.getItem("High Score")) || [];
+// }
+
+// function setLocalStorage(elementToAdd) {
+//   var currentStorage = getLocalStorage();     be a populated array or an empty array
+//   currentStorage.push(elementToAdd);   currentStorage variable now has all the new data added to it
+// console.log(currentStorage)
+// currentStorage.sort(function(a, b)) {
+//   return b.score - a.score;
+// }
+// if (currentStorage.length > 10) {
+      // before we delete the old scores lets first sort and then we remove lowest element
+  // currentStorage.pop();
+// }
+//   localStorage,getItem("High Score")JSON.stringigy(currentStorage));
+// }
+
+// put this sorting stuff into a for loop
+
+// sorting algorithm
+
+//   a.score - b.score
+
+// js sort
+
+// make the compare and pop happen during getLocalStorage
+
+
+// window.location.href = "./high score"
+
+
+
+
+// function getWins() {
+//   var storedWins = localStorage.getItem("winCount");
+//   if (storedWins === null) {
+//     winCounter = 0;
+//   } else {
+//     winCounter = storedWins;
+//   };
+//   win.textContent = winCounter;
+// };
+
+// function getLosses() {
+//   var storedLosses = localStorage.getItem("loseCount");
+//   if (storedLosses === null) {
+//     loseCounter = 0;
+//   } else {
+//     loseCounter = storedLosses;
+//   };
+//   lose.textContent = loseCounter;
+// };
+
+// function init() {
+//   getWins();
+//   getLosses();
+// };
+
+
+// var titleEl = document.createElement("");

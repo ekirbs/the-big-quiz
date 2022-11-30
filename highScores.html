@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
 
   <title>High Scores</title>
 </head>
@@ -13,18 +15,14 @@
 </header>
 
 <main>
-  <table id = "results" class="table table-striped hide">
-    <thead>
-        <tr>
-          <th>Roll</th>
-          <th>Count</th>
-          <th>Percent</th>
-      </tr>
-    </thead>
-  <tbody>
+  <p>High Scores: <span id="high-score-count">0</span></p>
+      <ul id="high-score-list"></ul>
+</main>
 
-  </tbody>
-</table></main>
-  
+  <script src="./assets/javascript/scoreScript.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

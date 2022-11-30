@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./Assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
   <title>the BIG quiz</title>
 </head>
@@ -15,9 +15,7 @@
   <header id="header">
     <a class="float-left" href="highScores.html">View High Scores</a> 
 
-    <h1>
-      THE BIG QUIZ
-    </h1>
+    <h1 class="fancy">THE BIG QUIZ</h1>
 
     <!-- <h2><span id="counter">0</span> Your Score</h2> -->
 
@@ -26,12 +24,10 @@
   <!-- <h1>Coding Quiz Challenge</h1> -->
   <p>Try to answer the following code-related questions within the limit.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!</p>
 
-  <section id="hero">
-    <p id="score">
-    </p>
+  <section id="infoBar">
+    <p id="score"></p>
     <br>
-    <p id="countdown">
-    </p>
+    <p id="countdown"></p>
   </section>
 
   <!-- MAIN QUESTION AND ANSWER SECTION -->
@@ -39,12 +35,15 @@
     <h3 id="question-title"></h3>
     <ul id="question-body">
     </ul>
-    <h3 id="result">
-    </h3>
-    <button id="start-button">
-      Start the Quiz
-    </button>
+    <h3 id="result"></h3>
+    <button id="start-button">Start the Quiz</button>
   </main>
+
+  <form id="name-form" method="POST">
+    <label for="name-text">Enter Your Name: </label>
+    <input type="text" placeholder="your name here!!" name="name-text" id="name-text" />
+  </form>
+
   <script src="./assets/javascript/script.js"></script>
 </body>
 
