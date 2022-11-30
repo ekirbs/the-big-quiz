@@ -10,10 +10,11 @@
   <title>the BIG quiz</title>
 </head>
 
-<body>
-  <!-- Header with current score and timer -->
-  <header>
+<body id="body">
+  <!-- HEADER -->
+  <header id="header">
     <a class="float-left" href="highScores.html">View High Scores</a> 
+
     <h1>
       THE BIG QUIZ
     </h1>
@@ -22,7 +23,7 @@
 
   </header>
 
-  <h1>Coding Quiz Challenge</h1>
+  <!-- <h1>Coding Quiz Challenge</h1> -->
   <p>Try to answer the following code-related questions within the limit.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!</p>
 
   <section id="hero">
@@ -33,13 +34,13 @@
     </p>
   </section>
 
-  <!-- Container for quiz Q&A, plus start button -->
+  <!-- MAIN QUESTION AND ANSWER SECTION -->
   <main id="container">
     <h3 id="question-title"></h3>
     <ul id="question-body">
     </ul>
-    <h4 id="result">
-    </h4>
+    <h3 id="result">
+    </h3>
     <button id="start-button">
       Start the Quiz
     </button>

@@ -22,20 +22,27 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-/* header {
+
+#header a {
+  margin-left: 20px;
+}
+
+#header h1{
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
-} */
+  color: black;
+}
 
-#header {
+/* #header h1 {
   display: flex;
   justify-content: center;
   padding: 2% 10% 0;
-}
+} */
 
-#header h1 {
+#body p {
   display: flex;
   justify-content: center;
   padding: 2% 10% 0;
@@ -45,7 +52,7 @@ body {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
@@ -107,9 +114,9 @@ body {
   float: left;
 }
 
-.hide {
+/* .hide {
   display: none;
-}
+} */
 
 #hero {
   display: flex;

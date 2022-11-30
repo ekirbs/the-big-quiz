@@ -20,9 +20,9 @@ var qaDepo = [
     correct: "Sir Isaac Newton"
   },
   {
-    question: "Who is the current World Chess Champion?",
-    answers: ["Fabiano Caruana", "Gary Kasparov", "Magnus Carlsen", "Viswanathan Anand", "Bobby Fisher"],
-    correct: "Magnus Carlsen"
+    question: "Which of the following video game characters can be found in Mario Kart 64?",
+    answers: ["Toad", "Daisy", "Bowser", "Birdo", "All of the above"],
+    correct: "All of the above"
   },
   {
     question: "Which of these is not a type of fencing sword.",
@@ -30,22 +30,27 @@ var qaDepo = [
     correct: "Longsword"
   },
   {
-    question: "Which of the following video game characters can be found in Mario Kart 64?",
-    answers: ["Toad", "Daisy", "Bowser", "Birdo", "All of the above"],
-    correct: "All of the above"
+    question: "Who is the current World Chess Champion?",
+    answers: ["Fabiano Caruana", "Gary Kasparov", "Magnus Carlsen", "Viswanathan Anand", "Bobby Fisher"],
+    correct: "Magnus Carlsen"
   },
   {
     question: "Which of these players was NOT on the 1994 USA World Cup roster?",
     answers: ["Alexei Lalas", "Tab Ramos", "Marcelo Balboa", "Landon Donovan", "Cobi Jones"],
     correct: "Landon Donovan"
-  }
+  },
+  {
+    question: "What is the average airspeed velocity of an unladen swallow?",
+    answers: ["Blue", "12 miles per hour", "They are flightless birds", "22 meters per second", "What do you mean? African or European swallow?"],
+    correct: "What do you mean? African or European swallow?"
+  },
 ];
 
-// On load, show starting time and score of 0
-timer.textContent = timeLeft + " seconds remaining";
+// SCORE AND TIMER DISPLAY
 scoreDisplay.innerHTML = "Your Score: " + userScore;
+timer.textContent = timeLeft + " seconds remaining";
 
-// This is how questions display:
+// RENDERS A NEW QUESTION
 function renderCurrentQuestion() {
   console.log("game button clicked");
     questionArea.textContent = qaDepo[currentQuestion].question;
@@ -68,10 +73,12 @@ function countdown() {
             loggedScore = localStorage.setItem("userScore", userScore);
             console.log(loggedScore);
 
-            timer.textContent = "";
-            scoreDisplay.textContent = "";
+            // timer.textContent = "";
+            // scoreDisplay.textContent = "";
+            return countdown();
+
         };
-    }, 200);
+    }, 1000);
 };
 
 // LOST ON TIME FUNCTION
@@ -79,12 +86,16 @@ function displayMessage1() {
     questionArea.innerHTML = "Time's up!";
     questionBody.innerHTML = "";
     scoreDisplay.innerHTML = "Your score: 0";
+    resultText.innerHTML = "Your score: 0";
 };
 
+// FINISHED THE GAME FUNCTION
 function displayMessage2() {
   questionArea.innerHTML = "You've finished!";
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: " + userScore;
+  resultText.innerHTML = "Your score: " + userScore;
+
 };
 
 // we want to use "delegation" when dealing with eventlisteners and dynamic elemnts on the dom.
@@ -99,6 +110,7 @@ startButton.addEventListener('click', function () {
 
 document.addEventListener("click", checkForAnswer);
 
+// CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
 function checkForAnswer(event) {
     if (event.target.matches("li")) {
         console.log(event.target);
@@ -111,7 +123,7 @@ function checkForAnswer(event) {
         } else {
             console.log("Wrong answer");
             resultText.innerHTML = "That's not correct!"
-            timeLeft -= 10;
+            timeLeft -= 15;
             userScore = timeLeft;
             scoreDisplay.innerHTML = "Your score: " + userScore;
             console.log(userScore);
@@ -119,12 +131,13 @@ function checkForAnswer(event) {
 
         currentQuestion++;
         renderCurrentQuestion();
-        return null;
+        // return null;
     };
 
-    if (currentQuestion === 5) {
+    if (currentQuestion >= 5) {
       displayMessage2();
-      currentQuestion = 0;
+      return countdown();
+      // currentQuestion = 0;
     };
 };
 
