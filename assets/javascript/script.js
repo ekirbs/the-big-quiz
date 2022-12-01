@@ -74,6 +74,7 @@ signNameButton.addEventListener("click", function(event) {
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
 function startQuiz() {
+  currentQuestion = 0;
   isWin = false;
   timeCount = 100;
   startButton.disabled = true;
@@ -116,6 +117,7 @@ function displayMessage1() {
   resultText.innerHTML = "Your score: " + scoreCount;
   // main.classList.add("hide");
   inputCard.classList.remove("hide");
+  startButton.disabled = false;
 };
 
 // LOST ON TIME FUNCTION
@@ -124,6 +126,7 @@ function displayMessage2() {
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: 0";
   resultText.innerHTML = "Your score: 0";
+  startButton.disabled = false;
 };
 
 // CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
