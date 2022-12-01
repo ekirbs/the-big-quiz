@@ -10,11 +10,14 @@ highScoreList.innerHTML = "";
   // RENDERS HIGH SCORES ON PAGE
   function renderHighScores() {
   for (var i = 0; i < sortedScores.length; i++) {
-    var highScore = sortedScores[i];
+    // var {name, highScore} = sortedScores[i]; //destructuring
+    var name = sortedScores[i].name;
+    var highScore = sortedScores[i].highScore;
     console.log(highScore);
+    // var $li = `<li data-index=${i}>${name}: ${highScore}</li>`
 
     var li = document.createElement("li");
-    li.textContent = highScore;
+    li.textContent = `${name}: ${highScore}`; //template literal -- use a backtick (tilde button ~) to create a special string
     li.setAttribute("data-index", i);
     
     highScoreList.appendChild(li);

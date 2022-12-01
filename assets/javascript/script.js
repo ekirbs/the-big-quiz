@@ -145,7 +145,7 @@ function checkForAnswer(event) {
         console.log(scoreCount);
       };
             
-      if (currentQuestion === 5) {
+      if (currentQuestion === 5) { //cureentQuestion.length instead of 5 to make it malleable
         isWin = true;
         return scoreCount;
       } else {
@@ -158,11 +158,11 @@ function checkForAnswer(event) {
     };
   };
 
+  // STORE SCORE FUNCTION
   function getLocalStorage() {
     return JSON.parse(localStorage.getItem('userInfo')) || []
   };
 
-  
   function storeScore(userStat) {
     var userInfo = getLocalStorage();
     var userStat = {
@@ -174,7 +174,7 @@ function checkForAnswer(event) {
     userInfo.push(userStat);
 
     var sortedScores = userInfo.sort(function(a, b) {
-      return b.score - a.score;
+      return b.highScore - a.highScore;
     })
     if (sortedScores.length > 10) {
       sortedScores.pop();

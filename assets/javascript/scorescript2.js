@@ -141,3 +141,12 @@ init();
 
 
   // // var highScore = localStorage.getItem("score");
+
+
+  // HTML NOTES
+//   <!-- <div class="card">
+//   <h2 class="card-header">
+//     blah blah blah
+//   </h2>
+//   <img src="" alt="" srcset="">
+// </div> -->
