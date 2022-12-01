@@ -26,7 +26,7 @@ Once the Start Button is pressed, the user will have 100 seconds to answer all t
 
 The Final Score is whatever time they have left after they finish the quiz.  If the timer reaches zero, whether through a normal time-out or as a result of getting a question wrong, the score will be 0.
 
-After finishing the quiz, the user can enter their name into the submission form and see if they made the HIGH SCORE list!  ONly the top ten scores will be kept, so good luck!
+After finishing the quiz, the user can enter their name into the submission form and press Submit. Then go to the top of the page and click on the link to the High Scores page and see if they made the HIGH SCORE list!  Only the top ten scores will be kept, so good luck!
 
 ![Tutorial GIF.](./assets/images/tutor-gif.gif)
 
