@@ -5,23 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600&family=Roboto&family=Zen+Dots&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/css/style.css" />
 
   <title>the BIG quiz</title>
 </head>
 
 <body id="body">
-  <!-- HEADER -->
+
+  <!-- HEADER & INFO BAR -->
   <header id="header">
     <a class="float-left" href="highScores.html">View High Scores</a> 
 
     <h1 class="fancy">THE BIG QUIZ</h1>
-
-    <!-- <h2><span id="counter">0</span> Your Score</h2> -->
-
   </header>
 
-  <!-- <h1>Coding Quiz Challenge</h1> -->
   <p>Try to answer the following code-related questions within the limit.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!</p>
 
   <section id="infoBar">
@@ -39,6 +41,7 @@
     <button id="start-button">Start the Quiz</button>
   </main>
 
+  <!-- NAME INPUT FORM -->
   <div id="input-card" class="card hide">
     <h2>Enter Your Name:</h2>
     <form id="name-form"  class="name-form" method="POST">
@@ -50,11 +53,6 @@
       <button id="sign-name">Sign Up</button>
     </form>
   </div>
-
-  <!-- <form id="name-form" class="name-form hide" method="POST">
-    <label for="name-text">Enter Your Name: </label>
-    <input type="text" placeholder="your name here!!" name="name-text" id="name-text" />
-  </form> -->
 
   <script src="./assets/javascript/script.js"></script>
 </body>

@@ -13,7 +13,7 @@ body,
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Zen Dots', cursive;
   /* font-family: "Avenir Next", "Century Gothic", sans-serif; */
   background-color: #f9fbfd;
 }
@@ -36,8 +36,8 @@ body {
 
 #header h1{
   /* justify-self: center; */
-  /* padding: 20px;
-  padding-top: 0px; */
+  padding: 10px;
+  /* padding-top: 0px; */
   font-size: 60px;
   color: rgb(122, 242, 242);
   background-color: black;

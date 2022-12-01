@@ -19,6 +19,8 @@ var timeCount;
 var timer;
 var isWin = false;
 
+var userStat = [];
+
 // QUESTIONS AND ANSWERS DEPO
 var qaBank = [
   {
@@ -64,9 +66,41 @@ document.addEventListener("click", checkForAnswer);
 // EVENT LISTENER TO STORE USER DATA
 signNameButton.addEventListener("click", function(event) {
   event.preventDefault();
+  userStat = {
+    name: nameInput.value.trim(),
+    highScore: scoreCount
+  };
   
-  storeScore();
+  storeScore(userStat);
+  // storeScore();
+  // var userInfo = {
+  //   name: nameInput.value.trim(),
+  //   highScore: scoreCount
+  // };
+
+  // localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+  // var userStat = {
+  //   name: nameInput.value.trim(),
+  //   highScore: scoreCount
+  // };
+  
+  // userInfo.push(userStat);
+  // localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  
 });
+
+// function storeScore() {
+//   var userStat = {
+//     name: nameInput.value.trim(),
+//     highScore: scoreCount
+//   };
+
+  // addDataToLocalStorage(userStat);
+  // userInfo = JSON.parse(localStorage.getItem("storeScore")) || [];
+  // userInfo.push(userStat);
+  // localStorage.setItem("storeScore", JSON.stringify(userInfo));
+// };
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
 function startQuiz() {
@@ -111,6 +145,7 @@ function displayMessage1() {
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: " + scoreCount;
   resultText.innerHTML = "Your score: " + scoreCount;
+  // main.classList.add("hide");
   inputCard.classList.remove("hide");
   // container.classList.add("hide");
 
@@ -159,26 +194,28 @@ function checkForAnswer(event) {
   };
 
   function getLocalStorage() {
+    // go to the localstorage and parse the string and return that
     return JSON.parse(localStorage.getItem('userInfo')) || []
   };
 
-  
+  console.log(userInfo);
+
   function storeScore(userStat) {
     var userInfo = getLocalStorage();
-    var userStat = {
-      name: nameInput.value.trim(),
-      highScore: scoreCount
-    };
-    
-    console.log(userInfo);
     userInfo.push(userStat);
 
+  // function addDataToLocalStorage(elementToAdd) {
+    // var currentlyInLocal = getLocalStorage() // => array with data or an empty array
+    //since we are an array we have access to array methods
+    // currentlyInLocal.push(elementToAdd);
+    //now the array is updated but not necessarily in order so lets sort it
     var sortedScores = userInfo.sort(function(a, b) {
       return b.score - a.score;
     })
     if (sortedScores.length > 10) {
       sortedScores.pop();
     };
-
+    // now the data we want to add to local storage is in the array. we need to stringify it and set it back in storage
     localStorage.setItem('userInfo', JSON.stringify(sortedScores));
-  };
+
+  }
