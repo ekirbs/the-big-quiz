@@ -111,6 +111,7 @@ body {
   clear: both;
 }
 
+#sign-name,
 #start-button {
   border: 3px solid rgb(122, 242, 242);
   color: rgb(122, 242, 242);
@@ -128,6 +129,11 @@ body {
   cursor: pointer;
 }
 
+#input-card {
+  display: flex;
+  text-align: center;
+  height: 30%;
+}
 
 .float-right {
   float: right;

@@ -9,6 +9,8 @@ var timerDisplay = document.querySelector("#countdown");
 var nameInput = document.querySelector("#name-text");
 var formInput = document.querySelector("#name-form");
 var inputCard = document.querySelector("#input-card");
+var container = document.querySelector("#container");
+
 var signNameButton = document.querySelector("#sign-name");
 
 var scoreCount = 0;
@@ -16,6 +18,7 @@ var currentQuestion = 0;
 var timeCount;
 var timer;
 var isWin = false;
+var userInfo = {};
 
 // QUESTIONS AND ANSWERS DEPO
 var qaBank = [
@@ -63,14 +66,33 @@ document.addEventListener("click", checkForAnswer);
 signNameButton.addEventListener("click", function(event) {
   event.preventDefault();
   
-  var userInfo = {
+  storeScore();
+  // var userInfo = {
+  //   name: nameInput.value.trim(),
+  //   highScore: scoreCount
+  // };
+
+  // localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+  // var userStat = {
+  //   name: nameInput.value.trim(),
+  //   highScore: scoreCount
+  // };
+  
+  // userInfo.push(userStat);
+  // localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  
+});
+
+function storeScore() {
+  var userStat = {
     name: nameInput.value.trim(),
     highScore: scoreCount
   };
-
-  localStorage.setItem("userInfo", JSON.stringify(userInfo));
-  
-});
+  var userInfo = JSON.parse(localStorage.getItem("storeScore")) || [];
+  userInfo.push(userStat);
+  localStorage.setItem("storeScore", JSON.stringify(userInfo));
+};
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
 function startQuiz() {
@@ -117,6 +139,8 @@ function displayMessage1() {
   resultText.innerHTML = "Your score: " + scoreCount;
   // main.classList.add("hide");
   inputCard.classList.remove("hide");
+  container.classList.add("hide");
+
   startButton.disabled = false;
 };
 
@@ -132,7 +156,7 @@ function displayMessage2() {
 // CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
 function checkForAnswer(event) {
   if (event.target.matches("li")) {
-    console.log(event.target);
+
     if (event.target.textContent === qaBank[currentQuestion].correct) {
       console.log("Right answer");
       resultText.innerHTML = "Thats right!"

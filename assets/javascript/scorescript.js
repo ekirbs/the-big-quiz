@@ -2,27 +2,13 @@
 var highScoreList = document.querySelector("#high-score-list");
 // var highScoreCountSpan = document.querySelector("#high-score-count");
 
-// var userInfo = [];
-var highScores = [];
-var sortedScores = [];
+// var highScores = [];
+var sortedScores = {};
 var userInfo = [];
+// var userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-// INITIAL FUNCTION ON PAGE LOAD
-function init() {
-  userInfo = JSON.parse(localStorage.getItem("userInfo"));
-
-  // function getLocalStorage () {
-//   return JSON.parse(localStorage.getItem("userInfo")) || [];
-// };
-
-  if (userInfo !== null) {
-    highScores = userInfo;
-  }
-  console.log(userInfo);
-
-  sortScores();
-};
-function sortScores() {
+highScoreList.innerHTML = "";
+// highScoreCountSpan.textContent = highScores.length;
   var sortedScores = userInfo.sort(function(a, b) {
     return a.score - b.score;
   });
@@ -30,17 +16,13 @@ function sortScores() {
   if (sortedScores.length > 10) {
     sortedScores.pop();
   };
-
-  console.log(sortedScores);
-  renderHighScores();
-};
-
-function renderHighScores() {
-  highScoreList.innerHTML = "";
-  // highScoreCountSpan.textContent = highScores.length;
   
-  for (var i = 0; i < sortedScores[i]; i++) {
+  console.log(sortedScores);
+  
+  function renderHighScores() {
+  for (var i = 0; i < sortedScores.length; i++) {
     var highScore = sortedScores[i];
+
     var li = document.createElement("li");
     li.textContent = highScore;
     li.setAttribute("data-index", i);
@@ -49,7 +31,53 @@ function renderHighScores() {
   };
 };
 
+// INITIAL FUNCTION ON PAGE LOAD
+function init() {
+  var storedUserInfo = JSON.parse(localStorage.getItem("userInfo"));
+  console.log(storedUserInfo);
+
+  // function getLocalStorage () {
+//   return JSON.parse(localStorage.getItem("userInfo")) || [];
+// };
+
+  if (userInfo !== null) {
+    userInfo = storedUserInfo;
+  }
+  console.log(userInfo);
+
+  renderHighScores();
+};
+
 init();
+
+// function sortScores() {
+//   var sortedScores = userInfo.sort(function(a, b) {
+//     return a.score - b.score;
+//   });
+
+//   if (sortedScores.length > 10) {
+//     sortedScores.pop();
+//   };
+
+//   console.log(sortedScores);
+//   renderHighScores();
+// };
+
+// function renderHighScores() {
+//   highScoreList.innerHTML = "";
+//   // highScoreCountSpan.textContent = highScores.length;
+  
+//   for (var i = 0; i < sortedScores[i]; i++) {
+//     var highScore = sortedScores[i];
+//     var li = document.createElement("li");
+//     li.textContent = highScore;
+//     li.setAttribute("data-index", i);
+    
+//     highScoreList.appendChild(li);
+//   };
+// };
+// };
+
 
 // function setLocalStorage(elementToAdd) {
 //   var currentStorage = init();   //  be a populated array or an empty array
