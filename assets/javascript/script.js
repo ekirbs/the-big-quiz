@@ -70,6 +70,7 @@ signNameButton.addEventListener("click", function(event) {
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
 function startQuiz() {
+  inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
   timeCount = 100;
@@ -107,12 +108,12 @@ function startTimer() {
 
 // FINISHED THE GAME FUNCTION
 function displayMessage1() {
+  inputCard.classList.remove("hide");
   questionArea.innerHTML = "You've finished!";
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: " + scoreCount;
   resultText.innerHTML = "Your score: " + scoreCount;
-  inputCard.classList.remove("hide");
-  // container.classList.add("hide");
+  container.classList.add("hide");
 
   startButton.disabled = false;
 };

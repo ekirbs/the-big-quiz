@@ -21,10 +21,10 @@
   <header id="header">
     <a class="float-left" href="highScores.html">View High Scores</a> 
 
-    <h1 class="fancy">THE BIG QUIZ</h1>
+    <h1>THE BIG QUIZ</h1>
   </header>
 
-  <p>Try to answer the following code-related questions within the limit of 100 seconds.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!  Good Luck!!!</p>
+  <p class="instruct">Try to answer the following code-related questions within the limit of 100 seconds.  Keep in mind that incorrect aswers will penalize your score/time limit by 15 seconds!  Good Luck!!!</p>
 
   <section id="infoBar">
     <p id="score"></p>
@@ -43,14 +43,14 @@
 
   <!-- NAME INPUT FORM -->
   <div id="input-card" class="card hide">
-    <h2>Enter Your Name, See if You Got a High Score:</h2>
+    <h4>Enter Your Name, See if You Got a High Score:</h2>
     <form id="name-form"  class="name-form" method="POST">
       <div class="input-group">
         <label for="name-text">Name</label>
         <input type="text" name="name-text" id="name-text" placeholder="your name here!!" />
       </div>
-      <div id="msg"></div>
-      <button id="sign-name">Submit</button>
+      <!-- <div id="msg"></div> -->
+      <a href="https://ekirbs.github.io/the-big-quiz/highScores.html"><button id="sign-name">Submit</button></a>
     </form>
   </div>
 
