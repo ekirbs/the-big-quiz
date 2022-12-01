@@ -6,7 +6,7 @@ This is the BIG quiz!  Although it's not so BIG yet, it has room to grow.  I mad
 
 GOOD LUCK ON THE QUIZ!!
 
-Link: [Eric Kirberger's BIG quiz](https://ekirbs.github.io/portfolio-homepage/ 'A quiz on random, unrelated topics.')
+Link: [Eric Kirberger's BIG quiz](https://ekirbs.github.io/the-big-quiz/ 'A quiz on random, unrelated topics.')
 
 
 ## Table of Contents
