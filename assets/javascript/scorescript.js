@@ -5,10 +5,10 @@ var highScoreCountSpan = document.querySelector("#high-score-count");
 
 // INITIAL FUNCTION ON PAGE LOAD
 function init() {
-  var highScoreLog = JSON.parse(localStorage.getItem("highScores"));
+  var userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-  if (highScoreLog !== null) {
-    highScores = highScoreLog;
+  if (userInfo !== null) {
+    highScores = userInfo;
   }
 
   renderHighScores();
@@ -29,19 +29,12 @@ function renderHighScores() {
   };
 };
 
-
-
-
-
-
-
-
-function init() {
-  getHighScores();
-};
+// function init() {
+//   getHighScores();
+// };
 
 function getLocalStorage () {
-  return JSON.parse(localStorage.getItem("High Score")) || [];
+  return JSON.parse(localStorage.getItem("userInfo")) || [];
 };
 
 function log_results(num_rolls, rolls, table) {
@@ -68,6 +61,10 @@ function log_results(num_rolls, rolls, table) {
       body.appendChild(row);
   }
 };
+
+init();
+
+
 
 // function setLocalStorage(elementToAdd) {
 //   var currentStorage = getLocalStorage();     be a populated array or an empty array

@@ -39,10 +39,22 @@
     <button id="start-button">Start the Quiz</button>
   </main>
 
-  <form id="name-form" method="POST">
+  <div id="input-card" class="card hide">
+    <h2>Enter Your Name:</h2>
+    <form id="name-form"  class="name-form" method="POST">
+      <div class="input-group">
+        <label for="name-text">Name</label>
+        <input type="text" name="name-text" id="name-text" placeholder="your name here!!" />
+      </div>
+      <div id="msg"></div>
+      <button id="sign-name">Sign Up</button>
+    </form>
+  </div>
+
+  <!-- <form id="name-form" class="name-form hide" method="POST">
     <label for="name-text">Enter Your Name: </label>
     <input type="text" placeholder="your name here!!" name="name-text" id="name-text" />
-  </form>
+  </form> -->
 
   <script src="./assets/javascript/script.js"></script>
 </body>

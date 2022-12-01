@@ -5,8 +5,12 @@ var questionBody = document.querySelector("#question-body");
 var resultText = document.querySelector("#result");
 var scoreDisplay = document.querySelector("#score");
 var timerDisplay = document.querySelector("#countdown");
-var highScoreInput = document.querySelector("#name-text");
-var highScoreNameForm = document.querySelector("#name-form");
+
+var nameInput = document.querySelector("#name-text");
+var formInput = document.querySelector("#name-form");
+var inputCard = document.querySelector("#input-card");
+var signNameButton = document.querySelector("#sign-name");
+
 
 var scoreCount = 0;
 var currentQuestion = 0;
@@ -50,13 +54,26 @@ var qaBank = [
   },
 ];
 
-// 
+// EVENT LISTENERS
 startButton.addEventListener('click', function () {
   console.log("Quiz started");
   startQuiz();
 });
 
 document.addEventListener("click", checkForAnswer);
+
+// EVENT LISTENER TO STORE USER DATA
+signNameButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  
+  var userInfo = {
+    name: nameInput.value.trim(),
+    highScore: scoreCount
+  };
+
+  localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  
+});
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
 function startQuiz() {
@@ -102,6 +119,8 @@ function displayMessage1() {
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: " + scoreCount;
   resultText.innerHTML = "Your score: " + scoreCount;
+  // main.classList.add("hide");
+  inputCard.classList.remove("hide");
 };
 
 // LOST ON TIME FUNCTION
@@ -110,10 +129,6 @@ function displayMessage2() {
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: 0";
   resultText.innerHTML = "Your score: 0";
-};
-
-function storeHighScores() {
-  localStorage.setItem("highScores", JSON.stringify(highScores));
 };
 
 // CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
@@ -134,13 +149,13 @@ function checkForAnswer(event) {
         scoreDisplay.innerHTML = "Your score: " + scoreCount;
         console.log(scoreCount);
       };
-      
-      currentQuestion++;
-      
-      if (currentQuestion > 5) {
+            
+      if (currentQuestion === 5) {
         isWin = true;
+        return scoreCount;
       } else {
         isWin = false;
+        currentQuestion++;
       };
       
       console.log(currentQuestion);
