@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600&family=Roboto&family=Zen+Dots&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/css/scoreStyle.css" />
 
   <title>High Scores</title>
@@ -12,13 +17,16 @@
 
 <body>
 
-<header>
-  <a class="float-left" href="index.html">Return to the quiz</a>
-</header>
+  <!-- HEADER BAR -->
+  <header id="header">
+    <a class="float-left" href="index.html">Return to the BIG quiz</a>
+    <h1>THE BIG QUIZ high scores</h1>
+  </header>
 
-<main>
-      <ul id="high-score-list"></ul>
-</main>
+  <!-- RENDERED HIGH SCORE LIST, MAX 10, IN ORDER OF SCORE -->
+  <main>
+    <ul id="high-score-list"></ul>
+  </main>
 
   <script src="./assets/javascript/scoreScript.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

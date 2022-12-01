@@ -126,7 +126,7 @@ function displayMessage2() {
   startButton.disabled = false;
 };
 
-// CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
+// CHECK IF ANSWER IS 'CORRECT' OR 'FALSE' FUNCTION
 function checkForAnswer(event) {
   if (event.target.matches("li")) {
 
@@ -145,7 +145,7 @@ function checkForAnswer(event) {
         console.log(scoreCount);
       };
             
-      if (currentQuestion === 5) { //cureentQuestion.length instead of 5 to make it malleable
+      if (currentQuestion === 5) { //currentQuestion.length instead of 5 to make it malleable?
         isWin = true;
         return scoreCount;
       } else {
@@ -158,7 +158,7 @@ function checkForAnswer(event) {
     };
   };
 
-  // STORE SCORE FUNCTION
+  // STORE SCORE FUNCTION (PULL LOCALSTORAGE, ADD NEW DATA, SORT BY SCORE, POP LAST SCORE OFF IF > 10, STORE NEW DATA)
   function getLocalStorage() {
     return JSON.parse(localStorage.getItem('userInfo')) || []
   };
