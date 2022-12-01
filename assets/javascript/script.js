@@ -11,14 +11,11 @@ var formInput = document.querySelector("#name-form");
 var inputCard = document.querySelector("#input-card");
 var signNameButton = document.querySelector("#sign-name");
 
-
 var scoreCount = 0;
 var currentQuestion = 0;
 var timeCount;
 var timer;
 var isWin = false;
-
-// var loggedScore = localStorage.getItem("scoreCount");
 
 // QUESTIONS AND ANSWERS DEPO
 var qaBank = [
@@ -103,12 +100,10 @@ function startTimer() {
     if (isWin === true && timeCount > 0) {
       displayMessage1();
       clearInterval(timer);
-      // return;
     }
     if (timeCount <= 0) {
       displayMessage2();
       clearInterval(timer);
-      // return;
     }
   }, 1000)
 };
@@ -162,143 +157,3 @@ function checkForAnswer(event) {
       renderCurrentQuestion();
     };
   };
-  
-  
-  
-  
-  
-  
-  // CHECK FOR WIN FUNCTION
-    // function checkWin() {
-    //   if (isWin === true) {
-    //     isWin = true;
-    //     return true;
-    //     // return startTimer();
-    //   } else {
-    //     return false;
-    //   }
-    // };
-  
-  // CHECK FOR WIN FUNCTION
-  // function checkWin() {
-    //   if (currentQuestion >= 5) {
-      //     isWin = true;
-  //     return true;
-  //     // return startTimer();
-  //   } else {
-    //     return false;
-    //   }
-    // };
-    
-    // function countdown() {
-      
-      //     var timeInterval = setInterval(function () {
-        //       timeCount--;
-        //         timer.textContent = timeCount + " seconds remaining";
-        //         scoreDisplay.innerHTML = "Your score: " + scoreCount;
-      
-      //         if (timeCount <= 0) {
-        
-//             clearInterval(timeInterval);
-
-//             displayMessage1();
-//             loggedScore = localStorage.setItem("scoreCount", scoreCount);
-//             console.log(loggedScore);
-
-//             // timer.textContent = "";
-//             // scoreDisplay.textContent = "";
-//             return countdown();
-
-//         };
-//     }, 1000);
-// };
-
-
-
-// we want to use "delegation" when dealing with eventlisteners and dynamic elemnts on the dom.
-//how delegation works is we attach the event listener directly to the dom and then filter thru it to make sure its acutally clicking on the desired target.
-
-// startButton.addEventListener('click', function () {
-//     console.log("Quiz started");
-//     scoreDisplay.innerHTML = "Your score: " + scoreCount;
-//     renderCurrentQuestion();
-//     countdown();
-// });
-
-// document.addEventListener("click", checkForAnswer);
-
-// CHECK IF ANSWER IS CORRECT OR FALSE FUNCTION
-// function checkForAnswer(event) {
-//     if (event.target.matches("li")) {
-//         console.log(event.target);
-//         if (event.target.textContent === qaBank[currentQuestion].correct) {
-//             console.log("Right answer");
-//             resultText.innerHTML = "Thats right!"
-//             scoreCount = timeCount;
-//             scoreDisplay.innerHTML = "Your score: " + scoreCount;
-//             console.log(scoreCount);
-//         } else {
-//             console.log("Wrong answer");
-//             resultText.innerHTML = "That's not correct!"
-//             timeCount -= 15;
-//             scoreCount = timeCount;
-//             scoreDisplay.innerHTML = "Your score: " + scoreCount;
-//             console.log(scoreCount);
-//         };
-
-//         currentQuestion++;
-//         console.log(currentQuestion);
-//         renderCurrentQuestion();
-//     };
-
-//     // if (currentQuestion >= 5) {
-//     //   isWin = true;
-//     // };
-// };
-
-
-
-
-// var counter = document.querySelector("#counter");
-// var guessedRight = document.querySelector("#guessedRight");
-// var guessedWrong = document.querySelector("#guessedWrong");
-
-// var count = localStorage.getItem("count");
-
-// counter.textContent = count;
-
-// addButton.addEventListener("click", function() {
-//   if (guessedRight) {
-//     count++;
-//     counter.textContent = count;
-//     localStorage.setItem("count", count);
-//   }
-// });
-
-// function getWins() {
-//   var storedWins = localStorage.getItem("winCount");
-//   if (storedWins === null) {
-//     winCounter = 0;
-//   } else {
-//     winCounter = storedWins;
-//   };
-//   win.textContent = winCounter;
-// };
-
-// function getLosses() {
-//   var storedLosses = localStorage.getItem("loseCount");
-//   if (storedLosses === null) {
-//     loseCounter = 0;
-//   } else {
-//     loseCounter = storedLosses;
-//   };
-//   lose.textContent = loseCounter;
-// };
-
-// function init() {
-//   getWins();
-//   getLosses();
-// };
-
-
-// var titleEl = document.createElement("");
