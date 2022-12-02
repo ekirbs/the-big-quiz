@@ -20,7 +20,7 @@ var timer;
 var isWin = false;
 
 // QUESTIONS AND ANSWERS DEPO
-var qaBank = [
+var quiz = [
   {
     question: "Who famously said: “If I have seen further, it is by standing on the shoulders of giants.” ",
     answers: ["Sir Isaac Newton", "Albert Einstein", "Rene Descartes", "Abraham Lincoln", "Martin Luthor King Jr."],
@@ -59,7 +59,7 @@ startButton.addEventListener('click', function () {
   startQuiz();
 });
 
-document.addEventListener("click", checkForAnswer);
+document.addEventListener("click", checkAnswer);
 
 // EVENT LISTENER TO STORE USER DATA
 signNameButton.addEventListener("click", function(event) {
@@ -77,15 +77,15 @@ function startQuiz() {
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
-  renderCurrentQuestion();
+  displayCurrentQuestion();
   startTimer();
 };
 
 // RENDERS A NEW QUESTION
-function renderCurrentQuestion() {
+function displayCurrentQuestion() {
   console.log("game button clicked");
-    questionArea.textContent = qaBank[currentQuestion].question;
-    questionBody.innerHTML = `<li>${qaBank[currentQuestion].answers[0]}</li><li>${qaBank[currentQuestion].answers[1]}</li><li>${qaBank[currentQuestion].answers[2]}</li><li>${qaBank[currentQuestion].answers[3]}</li><li>${qaBank[currentQuestion].answers[4]}</li>`;
+    questionArea.textContent = quiz[currentQuestion].question;
+    questionBody.innerHTML = `<li>${quiz[currentQuestion].answers[0]}</li><li>${quiz[currentQuestion].answers[1]}</li><li>${quiz[currentQuestion].answers[2]}</li><li>${quiz[currentQuestion].answers[3]}</li><li>${quiz[currentQuestion].answers[4]}</li>`;
 };
 
 // TIMER FUNCTION
@@ -128,10 +128,10 @@ function displayMessage2() {
 };
 
 // CHECK IF ANSWER IS 'CORRECT' OR 'FALSE' FUNCTION
-function checkForAnswer(event) {
+function checkAnswer(event) {
   if (event.target.matches("li")) {
 
-    if (event.target.textContent === qaBank[currentQuestion].correct) {
+    if (event.target.textContent === quiz[currentQuestion].correct) {
       console.log("Right answer");
       resultText.innerHTML = "Thats right!"
       scoreCount = timeCount;
@@ -146,7 +146,7 @@ function checkForAnswer(event) {
         console.log(scoreCount);
       };
             
-      if (currentQuestion === (qaBank.length - 1)) {
+      if (currentQuestion === (quiz.length - 1)) {
         isWin = true;
         return scoreCount;
       } else {
@@ -155,7 +155,7 @@ function checkForAnswer(event) {
       };
       
       console.log(currentQuestion);
-      renderCurrentQuestion();
+      displayCurrentQuestion();
     };
   };
 

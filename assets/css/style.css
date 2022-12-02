@@ -19,17 +19,18 @@ body {
 
 #body p {
   display: flex;
+  justify-content: center;
   text-align: center;
   padding: 2% 10% 0;
 }
 
-.float-right {
+/* .float-right {
   float: right;
-}
+} */
 
-.float-left {
+/* .float-left {
   float: left;
-}
+} */
 
 .hide {
   display: none;
