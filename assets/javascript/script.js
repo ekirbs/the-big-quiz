@@ -27,7 +27,7 @@ var qaBank = [
     correct: "Sir Isaac Newton"
   },
   {
-    question: "Which of the following video game characters can be found in Mario Kart 64?",
+    question: "Which of the following video game characters can be found in Mario Tennis 64?",
     answers: ["Toad", "Daisy", "Bowser", "Birdo", "All of the above"],
     correct: "All of the above"
   },
