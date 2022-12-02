@@ -127,7 +127,7 @@ function displayMessage2() {
   startButton.disabled = false;
 };
 
-// CHECK IF ANSWER IS 'CORRECT' OR 'FALSE' FUNCTION
+// CHECK IF ANSWER IS 'CORRECT' OR 'FALSE' FUNCTION, ALSO CHECKS IF THEY'VE FINISHED THE QUIZ OR INCREMENTS TO NEXT QUESTION
 function checkAnswer(event) {
   if (event.target.matches("li")) {
 
