@@ -25,39 +25,66 @@ var audioLoss = new Audio("./assets/audio/loss-sound.mp3");
 // QUESTIONS AND ANSWERS DEPO
 var quiz = [
   {
-    question: "Who famously said: “If I have seen further, it is by standing on the shoulders of giants.” ",
-    answers: ["Sir Isaac Newton", "Albert Einstein", "Rene Descartes", "Abraham Lincoln", "Martin Luthor King Jr."],
-    correct: "Sir Isaac Newton"
+    question:
+      "Who famously said: “If I have seen further, it is by standing on the shoulders of giants.” ",
+    answers: [
+      "Sir Isaac Newton",
+      "Albert Einstein",
+      "Rene Descartes",
+      "Abraham Lincoln",
+      "Martin Luthor King Jr.",
+    ],
+    correct: "Sir Isaac Newton",
   },
   {
-    question: "Which of the following video game characters can be found in Mario Tennis 64?",
+    question:
+      "Which of the following video game characters can be found in Mario Tennis 64?",
     answers: ["Toad", "Daisy", "Bowser", "Birdo", "All of the above"],
-    correct: "All of the above"
+    correct: "All of the above",
   },
   {
     question: "Which of these is not a type of fencing sword.",
     answers: ["Foil", "Longsword", "Sabre", "Epee", "All of the above"],
-    correct: "Longsword"
+    correct: "Longsword",
   },
   {
     question: "Who is the current World Chess Champion?",
-    answers: ["Fabiano Caruana", "Gary Kasparov", "Magnus Carlsen", "Viswanathan Anand", "Bobby Fisher"],
-    correct: "Magnus Carlsen"
+    answers: [
+      "Fabiano Caruana",
+      "Gary Kasparov",
+      "Magnus Carlsen",
+      "Viswanathan Anand",
+      "Bobby Fisher",
+    ],
+    correct: "Magnus Carlsen",
   },
   {
-    question: "Which of these players was NOT on the 1994 USA World Cup roster?",
-    answers: ["Alexei Lalas", "Tab Ramos", "Marcelo Balboa", "Landon Donovan", "Cobi Jones"],
-    correct: "Landon Donovan"
+    question:
+      "Which of these players was NOT on the 1994 USA World Cup roster?",
+    answers: [
+      "Alexei Lalas",
+      "Tab Ramos",
+      "Marcelo Balboa",
+      "Landon Donovan",
+      "Cobi Jones",
+    ],
+    correct: "Landon Donovan",
   },
   {
     question: "What is the average airspeed velocity of an unladen swallow?",
-    answers: ["Blue", "12 miles per hour", "They are flightless birds", "22 meters per second", "What do you mean? African or European swallow?"],
-    correct: "What do you mean? African or European swallow?"
+    answers: [
+      "Blue",
+      "12 miles per hour",
+      "They are flightless birds",
+      "22 meters per second",
+      "What do you mean? African or European swallow?",
+    ],
+    correct: "What do you mean? African or European swallow?",
   },
 ];
 
 // EVENT LISTENERS
-startButton.addEventListener('click', function () {
+startButton.addEventListener("click", function () {
   // console.log("Quiz started");
   startQuiz();
 });
@@ -65,8 +92,7 @@ startButton.addEventListener('click', function () {
 document.addEventListener("click", checkAnswer);
 
 // EVENT LISTENER TO STORE USER DATA
-signNameButton.addEventListener("click", function(event) {
-  
+signNameButton.addEventListener("click", function (event) {
   storeScore();
   // window.location.href = "./highScores.html"
 });
@@ -76,7 +102,7 @@ function startQuiz() {
   inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
-  timeCount = 110;
+  timeCount = 120;
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
@@ -87,13 +113,13 @@ function startQuiz() {
 // RENDERS A NEW QUESTION
 function displayCurrentQuestion() {
   // console.log("game button clicked");
-    questionArea.textContent = quiz[currentQuestion].question;
-    questionBody.innerHTML = `<li>${quiz[currentQuestion].answers[0]}</li><li>${quiz[currentQuestion].answers[1]}</li><li>${quiz[currentQuestion].answers[2]}</li><li>${quiz[currentQuestion].answers[3]}</li><li>${quiz[currentQuestion].answers[4]}</li>`;
+  questionArea.textContent = quiz[currentQuestion].question;
+  questionBody.innerHTML = `<li>${quiz[currentQuestion].answers[0]}</li><li>${quiz[currentQuestion].answers[1]}</li><li>${quiz[currentQuestion].answers[2]}</li><li>${quiz[currentQuestion].answers[3]}</li><li>${quiz[currentQuestion].answers[4]}</li>`;
 };
 
 // TIMER FUNCTION
 function startTimer() {
-  timer = setInterval(function() {
+  timer = setInterval(function () {
     timeCount--;
     timerDisplay.textContent = timeCount + " second remaining";
     scoreDisplay.innerHTML = "Your score: " + scoreCount;
@@ -107,7 +133,7 @@ function startTimer() {
       audioLoss.play();
       clearInterval(timer);
     }
-  }, 1000)
+  }, 1000);
 };
 
 // FINISHED THE GAME FUNCTION
@@ -136,56 +162,55 @@ function displayMessage2() {
 // CHECK IF ANSWER IS 'CORRECT' OR 'FALSE' FUNCTION, ALSO CHECKS IF THEY'VE FINISHED THE QUIZ OR INCREMENTS TO NEXT QUESTION
 function checkAnswer(event) {
   if (event.target.matches("li")) {
-
     if (event.target.textContent === quiz[currentQuestion].correct) {
       // console.log("Right answer");
-      resultText.innerHTML = "Thats right!"
+      resultText.innerHTML = "Thats right!";
       scoreCount = timeCount;
       scoreDisplay.innerHTML = "Your score: " + scoreCount;
       // console.log(scoreCount);
     } else {
-        // console.log("Wrong answer");
-        resultText.innerHTML = "That's not correct!"
-        timeCount -= 15;
-        scoreCount = timeCount;
-        scoreDisplay.innerHTML = "Your score: " + scoreCount;
-        // console.log(scoreCount);
-      };
-            
-      if (currentQuestion === (quiz.length - 1)) {
-        isWin = true;
-        return scoreCount;
-      } else {
-        isWin = false;
-        currentQuestion++;
-      };
-      
-      // console.log(currentQuestion);
-      displayCurrentQuestion();
-    };
+      // console.log("Wrong answer");
+      resultText.innerHTML = "That's not correct!";
+      timeCount -= 15;
+      scoreCount = timeCount;
+      scoreDisplay.innerHTML = "Your score: " + scoreCount;
+      // console.log(scoreCount);
+    }
+
+    if (currentQuestion === quiz.length - 1) {
+      isWin = true;
+      return scoreCount;
+    } else {
+      isWin = false;
+      currentQuestion++;
+    }
+
+    // console.log(currentQuestion);
+    displayCurrentQuestion();
+  }
+};
+
+// STORE SCORE FUNCTION (PULL LOCALSTORAGE, ADD NEW DATA, SORT BY SCORE, POP LAST SCORE OFF IF > 10, STORE NEW DATA)
+function getLocalStorage() {
+  return JSON.parse(localStorage.getItem("userInfo")) || [];
+};
+
+function storeScore(userStat) {
+  var userInfo = getLocalStorage();
+  var userStat = {
+    name: nameInput.value.trim(),
+    highScore: scoreCount,
   };
 
-  // STORE SCORE FUNCTION (PULL LOCALSTORAGE, ADD NEW DATA, SORT BY SCORE, POP LAST SCORE OFF IF > 10, STORE NEW DATA)
-  function getLocalStorage() {
-    return JSON.parse(localStorage.getItem('userInfo')) || []
-  };
+  // console.log(userInfo);
+  userInfo.push(userStat);
 
-  function storeScore(userStat) {
-    var userInfo = getLocalStorage();
-    var userStat = {
-      name: nameInput.value.trim(),
-      highScore: scoreCount
-    };
-    
-    // console.log(userInfo);
-    userInfo.push(userStat);
+  var sortedScores = userInfo.sort(function (a, b) {
+    return b.highScore - a.highScore;
+  });
+  if (sortedScores.length > 10) {
+    sortedScores.pop();
+  }
 
-    var sortedScores = userInfo.sort(function(a, b) {
-      return b.highScore - a.highScore;
-    })
-    if (sortedScores.length > 10) {
-      sortedScores.pop();
-    };
-
-    localStorage.setItem('userInfo', JSON.stringify(sortedScores));
-  };
+  localStorage.setItem("userInfo", JSON.stringify(sortedScores));
+};
