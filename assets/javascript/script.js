@@ -25,20 +25,12 @@ var audioLoss = new Audio("./assets/audio/loss-sound.mp3");
 // QUESTIONS AND ANSWERS DEPO
 var quiz = [
   {
-    question:
-      "Who famously said: “If I have seen further, it is by standing on the shoulders of giants.” ",
-    answers: [
-      "Sir Isaac Newton",
-      "Albert Einstein",
-      "Rene Descartes",
-      "Abraham Lincoln",
-      "Martin Luthor King Jr.",
-    ],
+    question: "Who famously said: “If I have seen further, it is by standing on the shoulders of giants.” ",
+    answers: ["Sir Isaac Newton", "Albert Einstein", "Rene Descartes", "Abraham Lincoln", "Martin Luthor King Jr."],
     correct: "Sir Isaac Newton",
   },
   {
-    question:
-      "Which of the following video game characters can be found in Mario Tennis 64?",
+    question: "Which of the following video game characters can be found in Mario Tennis 64?",
     answers: ["Toad", "Daisy", "Bowser", "Birdo", "All of the above"],
     correct: "All of the above",
   },
@@ -49,36 +41,17 @@ var quiz = [
   },
   {
     question: "Who is the current World Chess Champion?",
-    answers: [
-      "Fabiano Caruana",
-      "Gary Kasparov",
-      "Magnus Carlsen",
-      "Viswanathan Anand",
-      "Bobby Fisher",
-    ],
+    answers: ["Fabiano Caruana", "Gary Kasparov", "Magnus Carlsen", "Viswanathan Anand", "Bobby Fisher"],
     correct: "Magnus Carlsen",
   },
   {
-    question:
-      "Which of these players was NOT on the 1994 USA World Cup roster?",
-    answers: [
-      "Alexei Lalas",
-      "Tab Ramos",
-      "Marcelo Balboa",
-      "Landon Donovan",
-      "Cobi Jones",
-    ],
+    question: "Which of these players was NOT on the 1994 USA World Cup roster?",
+    answers: ["Alexei Lalas", "Tab Ramos", "Marcelo Balboa", "Landon Donovan", "Cobi Jones"],
     correct: "Landon Donovan",
   },
   {
     question: "What is the average airspeed velocity of an unladen swallow?",
-    answers: [
-      "Blue",
-      "12 miles per hour",
-      "They are flightless birds",
-      "22 meters per second",
-      "What do you mean? African or European swallow?",
-    ],
+    answers: ["Blue", "12 miles per hour", "They are flightless birds", "22 meters per second", "What do you mean? African or European swallow?"],
     correct: "What do you mean? African or European swallow?",
   },
 ];
@@ -94,7 +67,7 @@ document.addEventListener("click", checkAnswer);
 // EVENT LISTENER TO STORE USER DATA
 signNameButton.addEventListener("click", function (event) {
   storeScore();
-  // window.location.href = "./highScores.html"
+  window.location.href = "highScores.html"
 });
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
@@ -102,7 +75,7 @@ function startQuiz() {
   inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
-  timeCount = 120;
+  timeCount = 110;
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
