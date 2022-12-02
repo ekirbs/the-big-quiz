@@ -75,7 +75,7 @@ function startQuiz() {
   inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
-  timeCount = 110;
+  timeCount = 120;
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
@@ -103,7 +103,6 @@ function startTimer() {
     }
     if (timeCount <= 0) {
       displayMessage2();
-      audioLoss.play();
       clearInterval(timer);
     }
   }, 1000);
