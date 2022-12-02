@@ -19,6 +19,9 @@ var timeCount;
 var timer;
 var isWin = false;
 
+var audioWin = new Audio("./assets/audio/win-sound.mp3");
+var audioLoss = new Audio("./assets/audio/loss-sound.mp3");
+
 // QUESTIONS AND ANSWERS DEPO
 var quiz = [
   {
@@ -63,10 +66,8 @@ document.addEventListener("click", checkAnswer);
 
 // EVENT LISTENER TO STORE USER DATA
 signNameButton.addEventListener("click", function(event) {
-  // event.preventDefault();
   
   storeScore();
-  // window.location.href = "highScores.html";
 });
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
@@ -102,6 +103,7 @@ function startTimer() {
     }
     if (timeCount <= 0) {
       displayMessage2();
+      audioLoss.play();
       clearInterval(timer);
     }
   }, 1000)
@@ -111,6 +113,7 @@ function startTimer() {
 function displayMessage1() {
   inputCard.classList.remove("hide");
   questionArea.innerHTML = "You've finished!";
+  audioWin.play();
   questionBody.innerHTML = "";
   scoreDisplay.innerHTML = "Your score: " + scoreCount;
   resultText.innerHTML = "Your score: " + scoreCount;
@@ -123,6 +126,7 @@ function displayMessage1() {
 function displayMessage2() {
   questionArea.innerHTML = "Time's up!";
   questionBody.innerHTML = "";
+  audioLoss.play();
   scoreDisplay.innerHTML = "Your score: 0";
   resultText.innerHTML = "Your score: 0";
   startButton.disabled = false;
