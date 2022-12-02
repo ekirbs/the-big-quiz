@@ -32,6 +32,10 @@ After finishing the quiz, the user can enter their name into the submission form
 
 ## Credits
 
+quicksounds.com
+
+fonts.google.com
+
 w3schools.com
 
 stackoverflow.com
