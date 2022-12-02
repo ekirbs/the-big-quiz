@@ -146,7 +146,7 @@ function checkForAnswer(event) {
         console.log(scoreCount);
       };
             
-      if (currentQuestion === (currentQuestion.length - 1)) { //currentQuestion.length instead of 5 to make it malleable?
+      if (currentQuestion === (qaBank.length - 1)) {
         isWin = true;
         return scoreCount;
       } else {
