@@ -9,7 +9,7 @@ var timerDisplay = document.querySelector("#countdown");
 var nameInput = document.querySelector("#name-text");
 var formInput = document.querySelector("#name-form");
 var inputCard = document.querySelector("#input-card");
-var container = document.querySelector("#container");
+var container = document.querySelector("#quiz-container");
 
 var signNameButton = document.querySelector("#sign-name");
 

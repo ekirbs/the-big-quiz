@@ -32,7 +32,7 @@ After finishing the quiz, the user can enter their name into the submission form
 
 ## Credits
 
-Special thanks to my TA Paul Cwik for helping me debug some frustrating problems and giving me some ideas on creative solutions.
+Special thanks to Paul Cwik for helping me debug some frustrating problems and giving me some ideas on creative solutions.
 
 ## License
 
