@@ -24,14 +24,6 @@ body {
   padding: 2% 10% 0;
 }
 
-/* .float-right {
-  float: right;
-} */
-
-/* .float-left {
-  float: left;
-} */
-
 .hide {
   display: none;
 }
@@ -77,9 +69,9 @@ body {
 }
 
 li:hover {
-  color: rgb(122, 242, 242);
   cursor: pointer;
-  /* text-shadow: 2px solid black; */
+  text-shadow: 2px 2px rgb(122, 242, 242);
+
 }
 
 /* NAME INPUT FORM */
@@ -97,7 +89,6 @@ li:hover {
   color: rgb(122, 242, 242);
   background-color: black;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;

@@ -5,14 +5,14 @@ var sortedScores = JSON.parse(localStorage.getItem("userInfo"));
 
 highScoreList.innerHTML = "";
   
-  console.log(sortedScores);
+  // console.log(sortedScores);
   
   // RENDERS HIGH SCORES ON PAGE
   function renderHighScores() {
   for (var i = 0; i < sortedScores.length; i++) {
     var name = sortedScores[i].name;
     var highScore = sortedScores[i].highScore;
-    console.log(highScore);
+    // console.log(highScore);
 
     var li = document.createElement("li");
     li.textContent = `${name}: ${highScore}`;
@@ -25,12 +25,12 @@ highScoreList.innerHTML = "";
 // INITIAL FUNCTION ON PAGE LOAD
 function init() {
   var storedUserInfo = JSON.parse(localStorage.getItem("userInfo"));
-  console.log(storedUserInfo);
+  // console.log(storedUserInfo);
 
   if (userInfo !== null) {
     userInfo = storedUserInfo;
   }
-  console.log(userInfo);
+  // console.log(userInfo);
 
   renderHighScores();
 };

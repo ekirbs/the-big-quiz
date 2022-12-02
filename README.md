@@ -32,6 +32,12 @@ After finishing the quiz, the user can enter their name into the submission form
 
 ## Credits
 
+w3schools.com
+
+stackoverflow.com
+
+developer.mozilla.org
+
 Special thanks to Paul Cwik for helping me debug some frustrating problems and giving me some ideas on creative solutions.
 
 ## License

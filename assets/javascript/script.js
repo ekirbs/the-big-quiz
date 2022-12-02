@@ -55,7 +55,7 @@ var quiz = [
 
 // EVENT LISTENERS
 startButton.addEventListener('click', function () {
-  console.log("Quiz started");
+  // console.log("Quiz started");
   startQuiz();
 });
 
@@ -83,7 +83,7 @@ function startQuiz() {
 
 // RENDERS A NEW QUESTION
 function displayCurrentQuestion() {
-  console.log("game button clicked");
+  // console.log("game button clicked");
     questionArea.textContent = quiz[currentQuestion].question;
     questionBody.innerHTML = `<li>${quiz[currentQuestion].answers[0]}</li><li>${quiz[currentQuestion].answers[1]}</li><li>${quiz[currentQuestion].answers[2]}</li><li>${quiz[currentQuestion].answers[3]}</li><li>${quiz[currentQuestion].answers[4]}</li>`;
 };
@@ -132,18 +132,18 @@ function checkAnswer(event) {
   if (event.target.matches("li")) {
 
     if (event.target.textContent === quiz[currentQuestion].correct) {
-      console.log("Right answer");
+      // console.log("Right answer");
       resultText.innerHTML = "Thats right!"
       scoreCount = timeCount;
       scoreDisplay.innerHTML = "Your score: " + scoreCount;
-      console.log(scoreCount);
+      // console.log(scoreCount);
     } else {
-        console.log("Wrong answer");
+        // console.log("Wrong answer");
         resultText.innerHTML = "That's not correct!"
         timeCount -= 15;
         scoreCount = timeCount;
         scoreDisplay.innerHTML = "Your score: " + scoreCount;
-        console.log(scoreCount);
+        // console.log(scoreCount);
       };
             
       if (currentQuestion === (quiz.length - 1)) {
@@ -171,7 +171,7 @@ function checkAnswer(event) {
       highScore: scoreCount
     };
     
-    console.log(userInfo);
+    // console.log(userInfo);
     userInfo.push(userStat);
 
     var sortedScores = userInfo.sort(function(a, b) {
