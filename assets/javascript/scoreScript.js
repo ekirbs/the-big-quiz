@@ -1,6 +1,6 @@
 //  GLOBAL VARIABLES
 var highScoreList = document.querySelector("#high-score-list");
-// var userInfo = [];
+var userInfo = [];
 var sortedScores = JSON.parse(localStorage.getItem("userInfo"));
 
 highScoreList.innerHTML = "";
