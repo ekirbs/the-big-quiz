@@ -146,7 +146,7 @@ function checkForAnswer(event) {
         console.log(scoreCount);
       };
             
-      if (currentQuestion === 5) { //currentQuestion.length instead of 5 to make it malleable?
+      if (currentQuestion === (currentQuestion.length - 1)) { //currentQuestion.length instead of 5 to make it malleable?
         isWin = true;
         return scoreCount;
       } else {
