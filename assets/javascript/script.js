@@ -66,6 +66,7 @@ signNameButton.addEventListener("click", function(event) {
   event.preventDefault();
   
   storeScore();
+  window.location.href = "./highScores.html";
 });
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
