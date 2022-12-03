@@ -27,6 +27,23 @@ h1 {
   text-align: center;
 }
 
+a:link {
+  color: rgb(122, 242, 242);;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FF6EFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: #FFFF66;
+  background-color: transparent;
+}
+
 /* HIGH SCORE LIST */
 ol {
   list-style-type: none;
