@@ -67,7 +67,7 @@ document.addEventListener("click", checkAnswer);
 // EVENT LISTENER TO STORE USER DATA
 signNameButton.addEventListener("click", function (event) {
   storeScore();
-  window.location.href = "highScores.html"
+  // window.location.href = "highScores.html"
 });
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
@@ -75,7 +75,7 @@ function startQuiz() {
   inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
-  timeCount = 120;
+  timeCount = 110;
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
