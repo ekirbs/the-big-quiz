@@ -65,7 +65,8 @@ startButton.addEventListener("click", function () {
 document.addEventListener("click", checkAnswer);
 
 // EVENT LISTENER TO STORE USER DATA
-signNameButton.addEventListener("click", function (event) {
+signNameButton.addEventListener("click", function () {
+
   storeScore();
   // window.location.href = "highScores.html"
 });
