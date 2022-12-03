@@ -68,7 +68,7 @@ document.addEventListener("click", checkAnswer);
 signNameButton.addEventListener("click", function () {
 
   storeScore();
-  // window.location.href = "https://ekirbs.github.io/the-big-quiz/highScores.html"
+  window.location.href = "highScores.html"
 });
 
 // START QUIZ FUNCTION WHEN START BUTTON CLICKED, SCORE AND TIMER DISPLAY
@@ -76,7 +76,7 @@ function startQuiz() {
   inputCard.classList.add("hide");
   currentQuestion = 0;
   isWin = false;
-  timeCount = 120;
+  timeCount = 110;
   startButton.disabled = true;
   scoreDisplay.innerHTML = "Your Score: " + scoreCount;
   timerDisplay.textContent = timeCount + " seconds remaining";
